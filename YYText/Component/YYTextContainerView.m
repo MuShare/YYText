@@ -141,4 +141,13 @@
     return self.hostView;
 }
 
+#pragma mark - Override define
+- (void)_define:(id)sender {
+    if ([self.hostView canPerformAction:@selector(_define:) withSender:sender]) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.hostView performSelector:@selector(_define:) withObject:sender];
+        });
+    }
+}
+
 @end

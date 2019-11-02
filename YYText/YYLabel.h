@@ -12,11 +12,9 @@
 #import <UIKit/UIKit.h>
 
 #if __has_include(<YYText/YYText.h>)
-#import <YYText/YYTextParser.h>
 #import <YYText/YYTextLayout.h>
 #import <YYText/YYTextAttribute.h>
 #else
-#import "YYTextParser.h"
 #import "YYTextLayout.h"
 #import "YYTextAttribute.h"
 #endif
@@ -128,15 +126,6 @@ NS_ASSUME_NONNULL_BEGIN
  0 means no limit.
  */
 @property (nonatomic) NSUInteger numberOfLines;
-
-/**
- When `text` or `attributedText` is changed, the parser will be called to modify the text.
- It can be used to add code highlighting or emoticon replacement to text view. 
- The default value is nil.
- 
- See `YYTextParser` protocol for more information.
- */
-@property (nullable, nonatomic, strong) id<YYTextParser> textParser;
 
 /**
  The current text layout in text view. It can be used to query the text layout information.
@@ -358,7 +347,6 @@ IB_DESIGNABLE
 
 @property (null_resettable, nonatomic, strong) UIFont *font;
 @property (nullable, nonatomic, copy) NSAttributedString *truncationToken;
-@property (nullable, nonatomic, strong) id<YYTextParser> textParser;
 @property (nullable, nonatomic, strong) YYTextLayout *textLayout;
 @property (nullable, nonatomic, copy) UIBezierPath *textContainerPath;
 @property (nullable, nonatomic, copy) NSArray<UIBezierPath*> *exclusionPaths;

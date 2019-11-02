@@ -12,11 +12,9 @@
 #import <UIKit/UIKit.h>
 
 #if __has_include(<YYText/YYText.h>)
-#import <YYText/YYTextParser.h>
 #import <YYText/YYTextLayout.h>
 #import <YYText/YYTextAttribute.h>
 #else
-#import "YYTextParser.h"
 #import "YYTextLayout.h"
 #import "YYTextAttribute.h"
 #endif
@@ -34,6 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @protocol YYTextViewDelegate <NSObject, UIScrollViewDelegate>
 @optional
+- (void)textView:(YYTextView *)textView willChangeTextLayout:(YYTextLayout *)layout;
 - (BOOL)textViewShouldBeginEditing:(YYTextView *)textView;
 - (BOOL)textViewShouldEndEditing:(YYTextView *)textView;
 - (void)textViewDidBeginEditing:(YYTextView *)textView;
@@ -151,15 +150,6 @@ NS_ASSUME_NONNULL_BEGIN
  See `NSAttributedString+YYText` for more convenience methods to set the attributes.
  */
 @property (nullable, nonatomic, copy) NSAttributedString *attributedText;
-
-/**
- When `text` or `attributedText` is changed, the parser will be called to modify the text.
- It can be used to add code highlighting or emoticon replacement to text view.
- The default value is nil.
- 
- See `YYTextParser` protocol for more information.
- */
-@property (nullable, nonatomic, strong) id<YYTextParser> textParser;
 
 /**
  The current text layout in text view (readonly).

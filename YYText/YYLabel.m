@@ -204,7 +204,7 @@ static dispatch_queue_t YYLabelGetReleaseQueue() {
         NSMutableAttributedString *hiText = _innerText.mutableCopy;
         NSDictionary *newAttrs = _highlight.attributes;
         [newAttrs enumerateKeysAndObjectsUsingBlock:^(NSString *key, id value, BOOL *stop) {
-            [hiText yy_setAttribute:key value:value range:_highlightRange];
+            [hiText yy_setAttribute:key value:value range:self->_highlightRange];
         }];
         _highlightLayout = [YYTextLayout layoutWithContainer:_innerContainer text:hiText];
         _shrinkHighlightLayout = [YYLabel _shrinkLayoutWithLayout:_highlightLayout];
@@ -660,9 +660,6 @@ static dispatch_queue_t YYLabelGetReleaseQueue() {
             default: break;
         }
     }
-    if ([_textParser parseText:_innerText selectedRange:NULL]) {
-        [self _updateOuterTextProperties];
-    }
     if (!_ignoreCommonProperties) {
         if (_displaysAsynchronously && _clearContentsBeforeAsynchronouslyDisplay) {
             [self _clearContents];
@@ -865,7 +862,7 @@ static dispatch_queue_t YYLabelGetReleaseQueue() {
     } else {
         _innerText = [NSMutableAttributedString new];
     }
-    [_textParser parseText:_innerText selectedRange:NULL];
+
     if (!_ignoreCommonProperties) {
         if (_displaysAsynchronously && _clearContentsBeforeAsynchronouslyDisplay) {
             [self _clearContents];
@@ -948,22 +945,6 @@ static dispatch_queue_t YYLabelGetReleaseQueue() {
         [self _setLayoutNeedUpdate];
         [self _endTouch];
         [self invalidateIntrinsicContentSize];
-    }
-}
-
-- (void)setTextParser:(id<YYTextParser>)textParser {
-    if (_textParser == textParser || [_textParser isEqual:textParser]) return;
-    _textParser = textParser;
-    if ([_textParser parseText:_innerText selectedRange:NULL]) {
-        [self _updateOuterTextProperties];
-        if (!_ignoreCommonProperties) {
-            if (_displaysAsynchronously && _clearContentsBeforeAsynchronouslyDisplay) {
-                [self _clearContents];
-            }
-            [self _setLayoutNeedUpdate];
-            [self _endTouch];
-            [self invalidateIntrinsicContentSize];
-        }
     }
 }
 
