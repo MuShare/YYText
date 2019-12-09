@@ -26,9 +26,7 @@
     [self addCell:@"Text Attributes 2" class:@"YYTextTagExample"];
     [self addCell:@"Text Attachments" class:@"YYTextAttachmentExample"];
     [self addCell:@"Text Edit" class:@"YYTextEditExample"];
-    [self addCell:@"Text Parser (Markdown)" class:@"YYTextMarkdownExample"];
-    [self addCell:@"Text Parser (Emoticon)" class:@"YYTextEmoticonExample"];
-    [self addCell:@"Text Binding" class:@"YYTextBindingExample"];
+    [self addCell:@"Text Edit Ruby" class:@"YYTextEditRubyExample"];
     [self addCell:@"Copy and Paste" class:@"YYTextCopyPasteExample"];
     [self addCell:@"Undo and Redo" class:@"YYTextUndoRedoExample"];
     [self addCell:@"Ruby Annotation" class:@"YYTextRubyExample"];
