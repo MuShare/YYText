@@ -31,9 +31,6 @@
     
     NSString *text = @"You can copy image from browser or photo album and paste it to here. It support animated GIF and APNG. \n\nYou can also copy attributed string from other YYTextView.\n";
     
-    YYTextSimpleMarkdownParser *parser = [YYTextSimpleMarkdownParser new];
-    [parser setColorWithDarkTheme];
-    
     YYTextView *textView = [YYTextView new];
     textView.text = text;
     textView.font = [UIFont systemFontOfSize:17];

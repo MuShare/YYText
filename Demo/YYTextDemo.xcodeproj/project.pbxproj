@@ -24,7 +24,6 @@
 		D91054C91F3735E50007F224 /* YYTextSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D910549F1F3735E50007F224 /* YYTextSelectionView.m */; };
 		D91054CA1F3735E50007F224 /* YYTextArchiver.m in Sources */ = {isa = PBXBuildFile; fileRef = D91054A21F3735E50007F224 /* YYTextArchiver.m */; };
 		D91054CB1F3735E50007F224 /* YYTextAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = D91054A41F3735E50007F224 /* YYTextAttribute.m */; };
-		D91054CC1F3735E50007F224 /* YYTextParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D91054A61F3735E50007F224 /* YYTextParser.m */; };
 		D91054CD1F3735E50007F224 /* YYTextRubyAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = D91054A81F3735E50007F224 /* YYTextRubyAnnotation.m */; };
 		D91054CE1F3735E50007F224 /* YYTextRunDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D91054AA1F3735E50007F224 /* YYTextRunDelegate.m */; };
 		D91054CF1F3735E50007F224 /* NSAttributedString+YYText.m in Sources */ = {isa = PBXBuildFile; fileRef = D91054AD1F3735E50007F224 /* NSAttributedString+YYText.m */; };
@@ -53,13 +52,10 @@
 		D910551B1F37367B0007F224 /* YYTextAsyncExample.m in Sources */ = {isa = PBXBuildFile; fileRef = D91055021F37367B0007F224 /* YYTextAsyncExample.m */; };
 		D910551C1F37367B0007F224 /* YYTextAttachmentExample.m in Sources */ = {isa = PBXBuildFile; fileRef = D91055041F37367B0007F224 /* YYTextAttachmentExample.m */; };
 		D910551D1F37367B0007F224 /* YYTextAttributeExample.m in Sources */ = {isa = PBXBuildFile; fileRef = D91055061F37367B0007F224 /* YYTextAttributeExample.m */; };
-		D910551E1F37367B0007F224 /* YYTextBindingExample.m in Sources */ = {isa = PBXBuildFile; fileRef = D91055081F37367B0007F224 /* YYTextBindingExample.m */; };
 		D910551F1F37367B0007F224 /* YYTextCopyPasteExample.m in Sources */ = {isa = PBXBuildFile; fileRef = D910550A1F37367B0007F224 /* YYTextCopyPasteExample.m */; };
 		D91055201F37367B0007F224 /* YYTextEditExample.m in Sources */ = {isa = PBXBuildFile; fileRef = D910550C1F37367B0007F224 /* YYTextEditExample.m */; };
-		D91055211F37367B0007F224 /* YYTextEmoticonExample.m in Sources */ = {isa = PBXBuildFile; fileRef = D910550E1F37367B0007F224 /* YYTextEmoticonExample.m */; };
 		D91055221F37367B0007F224 /* YYTextExample.m in Sources */ = {isa = PBXBuildFile; fileRef = D91055101F37367B0007F224 /* YYTextExample.m */; };
 		D91055231F37367B0007F224 /* YYTextExampleHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D91055121F37367B0007F224 /* YYTextExampleHelper.m */; };
-		D91055241F37367B0007F224 /* YYTextMarkdownExample.m in Sources */ = {isa = PBXBuildFile; fileRef = D91055141F37367B0007F224 /* YYTextMarkdownExample.m */; };
 		D91055251F37367B0007F224 /* YYTextRubyExample.m in Sources */ = {isa = PBXBuildFile; fileRef = D91055161F37367B0007F224 /* YYTextRubyExample.m */; };
 		D91055261F37367B0007F224 /* YYTextTagExample.m in Sources */ = {isa = PBXBuildFile; fileRef = D91055181F37367B0007F224 /* YYTextTagExample.m */; };
 		D91055271F37367B0007F224 /* YYTextUndoRedoExample.m in Sources */ = {isa = PBXBuildFile; fileRef = D910551A1F37367B0007F224 /* YYTextUndoRedoExample.m */; };
@@ -174,20 +170,14 @@
 		D91055041F37367B0007F224 /* YYTextAttachmentExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTextAttachmentExample.m; sourceTree = "<group>"; };
 		D91055051F37367B0007F224 /* YYTextAttributeExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTextAttributeExample.h; sourceTree = "<group>"; };
 		D91055061F37367B0007F224 /* YYTextAttributeExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTextAttributeExample.m; sourceTree = "<group>"; };
-		D91055071F37367B0007F224 /* YYTextBindingExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTextBindingExample.h; sourceTree = "<group>"; };
-		D91055081F37367B0007F224 /* YYTextBindingExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTextBindingExample.m; sourceTree = "<group>"; };
 		D91055091F37367B0007F224 /* YYTextCopyPasteExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTextCopyPasteExample.h; sourceTree = "<group>"; };
 		D910550A1F37367B0007F224 /* YYTextCopyPasteExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTextCopyPasteExample.m; sourceTree = "<group>"; };
 		D910550B1F37367B0007F224 /* YYTextEditExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTextEditExample.h; sourceTree = "<group>"; };
 		D910550C1F37367B0007F224 /* YYTextEditExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTextEditExample.m; sourceTree = "<group>"; };
-		D910550D1F37367B0007F224 /* YYTextEmoticonExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTextEmoticonExample.h; sourceTree = "<group>"; };
-		D910550E1F37367B0007F224 /* YYTextEmoticonExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTextEmoticonExample.m; sourceTree = "<group>"; };
 		D910550F1F37367B0007F224 /* YYTextExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTextExample.h; sourceTree = "<group>"; };
 		D91055101F37367B0007F224 /* YYTextExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTextExample.m; sourceTree = "<group>"; };
 		D91055111F37367B0007F224 /* YYTextExampleHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTextExampleHelper.h; sourceTree = "<group>"; };
 		D91055121F37367B0007F224 /* YYTextExampleHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTextExampleHelper.m; sourceTree = "<group>"; };
-		D91055131F37367B0007F224 /* YYTextMarkdownExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTextMarkdownExample.h; sourceTree = "<group>"; };
-		D91055141F37367B0007F224 /* YYTextMarkdownExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTextMarkdownExample.m; sourceTree = "<group>"; };
 		D91055151F37367B0007F224 /* YYTextRubyExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTextRubyExample.h; sourceTree = "<group>"; };
 		D91055161F37367B0007F224 /* YYTextRubyExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTextRubyExample.m; sourceTree = "<group>"; };
 		D91055171F37367B0007F224 /* YYTextTagExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTextTagExample.h; sourceTree = "<group>"; };
@@ -431,12 +421,6 @@
 				D91055041F37367B0007F224 /* YYTextAttachmentExample.m */,
 				D910550B1F37367B0007F224 /* YYTextEditExample.h */,
 				D910550C1F37367B0007F224 /* YYTextEditExample.m */,
-				D91055131F37367B0007F224 /* YYTextMarkdownExample.h */,
-				D91055141F37367B0007F224 /* YYTextMarkdownExample.m */,
-				D910550D1F37367B0007F224 /* YYTextEmoticonExample.h */,
-				D910550E1F37367B0007F224 /* YYTextEmoticonExample.m */,
-				D91055071F37367B0007F224 /* YYTextBindingExample.h */,
-				D91055081F37367B0007F224 /* YYTextBindingExample.m */,
 				D91055091F37367B0007F224 /* YYTextCopyPasteExample.h */,
 				D910550A1F37367B0007F224 /* YYTextCopyPasteExample.m */,
 				D91055191F37367B0007F224 /* YYTextUndoRedoExample.h */,
@@ -477,7 +461,7 @@
 		D94EE9831F37304200F37AD6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = ibireme;
 				TargetAttributes = {
 					D94EE98A1F37304200F37AD6 = {
@@ -529,7 +513,6 @@
 				D91054CE1F3735E50007F224 /* YYTextRunDelegate.m in Sources */,
 				D91054FE1F3736700007F224 /* YYFPSLabel.m in Sources */,
 				D91054C11F3735E50007F224 /* YYTextContainerView.m in Sources */,
-				D91055211F37367B0007F224 /* YYTextEmoticonExample.m in Sources */,
 				D91054881F3735D20007F224 /* YYFrameImage.m in Sources */,
 				D910551B1F37367B0007F224 /* YYTextAsyncExample.m in Sources */,
 				D94EE99E1F37304200F37AD6 /* main.m in Sources */,
@@ -541,7 +524,6 @@
 				D91054FD1F3736700007F224 /* UIView+YYAdd.m in Sources */,
 				D91054D51F3735E50007F224 /* YYTextUtilities.m in Sources */,
 				D91054D71F3735E50007F224 /* YYLabel.m in Sources */,
-				D91054CC1F3735E50007F224 /* YYTextParser.m in Sources */,
 				D91055221F37367B0007F224 /* YYTextExample.m in Sources */,
 				D91054F81F3736700007F224 /* NSData+YYAdd.m in Sources */,
 				D91054F71F3736700007F224 /* NSBundle+YYAdd.m in Sources */,
@@ -559,11 +541,9 @@
 				D910551C1F37367B0007F224 /* YYTextAttachmentExample.m in Sources */,
 				D91054C71F3735E50007F224 /* YYTextLine.m in Sources */,
 				D91054CD1F3735E50007F224 /* YYTextRubyAnnotation.m in Sources */,
-				D91055241F37367B0007F224 /* YYTextMarkdownExample.m in Sources */,
 				D91054D41F3735E50007F224 /* YYTextTransaction.m in Sources */,
 				D910548B1F3735D20007F224 /* YYSpriteSheetImage.m in Sources */,
 				D91054CA1F3735E50007F224 /* YYTextArchiver.m in Sources */,
-				D910551E1F37367B0007F224 /* YYTextBindingExample.m in Sources */,
 				D91054D61F3735E50007F224 /* YYTextWeakProxy.m in Sources */,
 				D91054C41F3735E50007F224 /* YYTextInput.m in Sources */,
 				D91054871F3735D20007F224 /* YYAnimatedImageView.m in Sources */,
@@ -621,12 +601,16 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
@@ -674,12 +658,16 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
@@ -712,6 +700,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMPRESS_PNG_FILES = NO;
+				DEVELOPMENT_TEAM = 9HK6LYYN6L;
 				INFOPLIST_FILE = YYTextDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ibireme.YYTextDemo;
@@ -726,6 +715,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMPRESS_PNG_FILES = NO;
+				DEVELOPMENT_TEAM = 9HK6LYYN6L;
 				INFOPLIST_FILE = YYTextDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ibireme.YYTextDemo;
