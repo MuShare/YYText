@@ -9,6 +9,7 @@
 #import "YYTextExample.h"
 #import <time.h>
 #import "YYText.h"
+#import "YYTextDemo-Swift.h"
 
 @interface YYTextExample()
 @property (nonatomic, strong) NSMutableArray *titles;
