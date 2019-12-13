@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		601D5F5A239E104B006EB41E /* YYTextEditRubyExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601D5F59239E104B006EB41E /* YYTextEditRubyExample.swift */; };
+		6099F0FC23A3237800381814 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6099F0FB23A3237800381814 /* CoreServices.framework */; };
 		D91054861F3735D20007F224 /* Animated image support.txt in Resources */ = {isa = PBXBuildFile; fileRef = D910547B1F3735D20007F224 /* Animated image support.txt */; };
 		D91054871F3735D20007F224 /* YYAnimatedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = D910547D1F3735D20007F224 /* YYAnimatedImageView.m */; };
 		D91054881F3735D20007F224 /* YYFrameImage.m in Sources */ = {isa = PBXBuildFile; fileRef = D910547F1F3735D20007F224 /* YYFrameImage.m */; };
@@ -69,7 +70,6 @@
 		D91055371F3737540007F224 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D91055361F3737540007F224 /* CoreText.framework */; };
 		D91055391F37375A0007F224 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D91055381F37375A0007F224 /* Accelerate.framework */; };
 		D910553B1F37375F0007F224 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D910553A1F37375F0007F224 /* ImageIO.framework */; };
-		D910553D1F3737640007F224 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D910553C1F3737640007F224 /* MobileCoreServices.framework */; };
 		D910553F1F3737670007F224 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D910553E1F3737670007F224 /* SystemConfiguration.framework */; };
 		D91055411F37376C0007F224 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D91055401F37376C0007F224 /* libz.tbd */; };
 		D94EE9961F37304200F37AD6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D94EE9941F37304200F37AD6 /* Main.storyboard */; };
@@ -81,6 +81,8 @@
 /* Begin PBXFileReference section */
 		601D5F58239E104B006EB41E /* YYTextDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YYTextDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		601D5F59239E104B006EB41E /* YYTextEditRubyExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYTextEditRubyExample.swift; sourceTree = "<group>"; };
+		6099F0FA23A3234800381814 /* YYTextDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YYTextDemo.entitlements; sourceTree = "<group>"; };
+		6099F0FB23A3237800381814 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/CoreServices.framework; sourceTree = DEVELOPER_DIR; };
 		D910547B1F3735D20007F224 /* Animated image support.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Animated image support.txt"; sourceTree = "<group>"; };
 		D910547C1F3735D20007F224 /* YYAnimatedImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYAnimatedImageView.h; sourceTree = "<group>"; };
 		D910547D1F3735D20007F224 /* YYAnimatedImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYAnimatedImageView.m; sourceTree = "<group>"; };
@@ -214,8 +216,8 @@
 			files = (
 				D91055411F37376C0007F224 /* libz.tbd in Frameworks */,
 				D910553F1F3737670007F224 /* SystemConfiguration.framework in Frameworks */,
-				D910553D1F3737640007F224 /* MobileCoreServices.framework in Frameworks */,
 				D910553B1F37375F0007F224 /* ImageIO.framework in Frameworks */,
+				6099F0FC23A3237800381814 /* CoreServices.framework in Frameworks */,
 				D91055391F37375A0007F224 /* Accelerate.framework in Frameworks */,
 				D91055371F3737540007F224 /* CoreText.framework in Frameworks */,
 				D91055351F37374F0007F224 /* QuartzCore.framework in Frameworks */,
@@ -378,6 +380,7 @@
 		D91055311F37374B0007F224 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6099F0FB23A3237800381814 /* CoreServices.framework */,
 				D91055401F37376C0007F224 /* libz.tbd */,
 				D910553E1F3737670007F224 /* SystemConfiguration.framework */,
 				D910553C1F3737640007F224 /* MobileCoreServices.framework */,
@@ -412,6 +415,7 @@
 		D94EE98D1F37304200F37AD6 /* YYTextDemo */ = {
 			isa = PBXGroup;
 			children = (
+				6099F0FA23A3234800381814 /* YYTextDemo.entitlements */,
 				D910550F1F37367B0007F224 /* YYTextExample.h */,
 				D91055101F37367B0007F224 /* YYTextExample.m */,
 				D91055111F37367B0007F224 /* YYTextExampleHelper.h */,
@@ -707,13 +711,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = YYTextDemo/YYTextDemo.entitlements;
 				COMPRESS_PNG_FILES = NO;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = 9HK6LYYN6L;
 				INFOPLIST_FILE = YYTextDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ibireme.YYTextDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_PNG_TEXT = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "YYTextDemo/YYTextDemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -726,13 +733,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = YYTextDemo/YYTextDemo.entitlements;
 				COMPRESS_PNG_FILES = NO;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = 9HK6LYYN6L;
 				INFOPLIST_FILE = YYTextDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ibireme.YYTextDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_PNG_TEXT = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "YYTextDemo/YYTextDemo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -2998,10 +2998,12 @@ typedef NS_ENUM(NSUInteger, YYTextMoveDirection) {
     if (string.length == 0) return;
     BOOL resign = [self resignFirstResponder];
     if (!resign) return;
-    
+
+#if !TARGET_OS_MACCATALYST
     UIReferenceLibraryViewController* ref = [[UIReferenceLibraryViewController alloc] initWithTerm:string];
     ref.view.backgroundColor = [UIColor whiteColor];
     [[self _getRootViewController] presentViewController:ref animated:YES completion:^{}];
+#endif
 }
 
 
