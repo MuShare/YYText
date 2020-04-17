@@ -1291,7 +1291,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)yy_setSuperscript:(nullable NSNumber *)superscript range:(NSRange)range;
 - (void)yy_setGlyphInfo:(nullable CTGlyphInfoRef)glyphInfo range:(NSRange)range;
-- (void)yy_setCharacterShape:(nullable NSNumber *)characterShape range:(NSRange)range;
 - (void)yy_setRunDelegate:(nullable CTRunDelegateRef)runDelegate range:(NSRange)range;
 - (void)yy_setBaselineClass:(nullable CFStringRef)baselineClass range:(NSRange)range;
 - (void)yy_setBaselineInfo:(nullable CFDictionaryRef)baselineInfo range:(NSRange)range;

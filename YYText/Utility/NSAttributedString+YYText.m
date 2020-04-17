@@ -43,10 +43,6 @@ static double _YYDeviceSystemVersion() {
 #define kiOS7Later (kSystemVersion >= 7)
 #endif
 
-#ifndef kiOS8Later
-#define kiOS8Later (kSystemVersion >= 8)
-#endif
-
 #ifndef kiOS9Later
 #define kiOS9Later (kSystemVersion >= 9)
 #endif
@@ -704,17 +700,12 @@ return style. _attr_;
     dispatch_once(&onceToken, ^{
         failSet = [NSMutableSet new];
         [failSet addObject:(id)kCTGlyphInfoAttributeName];
-        [failSet addObject:(id)kCTCharacterShapeAttributeName];
-        if (kiOS7Later) {
-            [failSet addObject:(id)kCTLanguageAttributeName];
-        }
+        [failSet addObject:(id)kCTLanguageAttributeName];
         [failSet addObject:(id)kCTRunDelegateAttributeName];
         [failSet addObject:(id)kCTBaselineClassAttributeName];
         [failSet addObject:(id)kCTBaselineInfoAttributeName];
         [failSet addObject:(id)kCTBaselineReferenceInfoAttributeName];
-        if (kiOS8Later) {
-            [failSet addObject:(id)kCTRubyAnnotationAttributeName];
-        }
+        [failSet addObject:(id)kCTRubyAnnotationAttributeName];
         [failSet addObject:YYTextShadowAttributeName];
         [failSet addObject:YYTextInnerShadowAttributeName];
         [failSet addObject:YYTextUnderlineAttributeName];
@@ -1190,10 +1181,6 @@ return style. _attr_;
     [self yy_setAttribute:(id)kCTGlyphInfoAttributeName value:(__bridge id)glyphInfo range:range];
 }
 
-- (void)yy_setCharacterShape:(NSNumber *)characterShape range:(NSRange)range {
-    [self yy_setAttribute:(id)kCTCharacterShapeAttributeName value:characterShape range:range];
-}
-
 - (void)yy_setRunDelegate:(CTRunDelegateRef)runDelegate range:(NSRange)range {
     [self yy_setAttribute:(id)kCTRunDelegateAttributeName value:(__bridge id)runDelegate range:range];
 }
@@ -1273,11 +1260,9 @@ return style. _attr_;
 }
 
 - (void)yy_setTextRubyAnnotation:(YYTextRubyAnnotation *)ruby range:(NSRange)range {
-    if (kiOS8Later) {
-        CTRubyAnnotationRef rubyRef = [ruby CTRubyAnnotation];
-        [self yy_setRubyAnnotation:rubyRef range:range];
-        if (rubyRef) CFRelease(rubyRef);
-    }
+    CTRubyAnnotationRef rubyRef = [ruby CTRubyAnnotation];
+    [self yy_setRubyAnnotation:rubyRef range:range];
+    if (rubyRef) CFRelease(rubyRef);
 }
 
 - (void)yy_setTextGlyphTransform:(CGAffineTransform)textGlyphTransform range:(NSRange)range {
@@ -1395,12 +1380,8 @@ return style. _attr_;
                  YYTextBackedStringAttributeName,
                  YYTextBindingAttributeName,
                  YYTextAttachmentAttributeName].mutableCopy;
-        if (kiOS8Later) {
-            [keys addObject:(id)kCTRubyAnnotationAttributeName];
-        }
-        if (kiOS7Later) {
-            [keys addObject:NSAttachmentAttributeName];
-        }
+        [keys addObject:(id)kCTRubyAnnotationAttributeName];
+        [keys addObject:NSAttachmentAttributeName];
     });
     return keys;
 }

@@ -75,7 +75,6 @@ YYTextAttributeType YYTextAttributeGetType(NSString *name){
         dic[(id)kCTSuperscriptAttributeName] = UIKit; //it's a CoreText attrubite, but only supported by UIKit...
         dic[NSVerticalGlyphFormAttributeName] = All;
         dic[(id)kCTGlyphInfoAttributeName] = CoreText_YYText;
-        dic[(id)kCTCharacterShapeAttributeName] = CoreText_YYText;
         dic[(id)kCTRunDelegateAttributeName] = CoreText_YYText;
         dic[(id)kCTBaselineClassAttributeName] = CoreText_YYText;
         dic[(id)kCTBaselineInfoAttributeName] = CoreText_YYText;

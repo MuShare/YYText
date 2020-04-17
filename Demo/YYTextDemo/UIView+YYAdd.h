@@ -65,10 +65,6 @@ double YYDeviceSystemVersion(void);
 #define kiOS7Later (kSystemVersion >= 7)
 #endif
 
-#ifndef kiOS8Later
-#define kiOS8Later (kSystemVersion >= 8)
-#endif
-
 #ifndef kiOS9Later
 #define kiOS9Later (kSystemVersion >= 9)
 #endif

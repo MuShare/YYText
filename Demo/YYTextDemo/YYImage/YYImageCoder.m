@@ -2780,7 +2780,7 @@ CGImageRef YYCGImageCreateWithWebPData(CFDataRef webpData,
         NSData *data = [self _yy_dataRepresentationForSystem:YES];
         [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
             PHAssetCreationRequest *request = [PHAssetCreationRequest creationRequestForAsset];
-
+            [request addResourceWithType:PHAssetResourceTypePhoto data:data options:nil];
         } completionHandler:^(BOOL success, NSError * _Nullable error) {
             if (!completionBlock) return;
             if (pthread_main_np()) {
