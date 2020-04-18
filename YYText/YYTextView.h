@@ -50,6 +50,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)textView:(YYTextView *)textView didTapHighlight:(YYTextHighlight *)highlight inRange:(NSRange)characterRange rect:(CGRect)rect;
 - (BOOL)textView:(YYTextView *)textView shouldLongPressHighlight:(YYTextHighlight *)highlight inRange:(NSRange)characterRange;
 - (void)textView:(YYTextView *)textView didLongPressHighlight:(YYTextHighlight *)highlight inRange:(NSRange)characterRange rect:(CGRect)rect;
+- (void)textView:(YYTextView *)textView didTapAndSelectTextInRange:(NSRange)range;
 @end
 
 
@@ -297,6 +298,12 @@ NS_ASSUME_NONNULL_BEGIN
  from text view to pasteboard via "copy" menu.
  */
 @property (nonatomic) BOOL allowsCopyAttributedString;
+
+/**
+ A Boolean value indicating whether the receiver can tap and selected. Default is NO.
+ When the value of this property is YES, user can tap and select the text.
+ */
+@property (nonatomic) BOOL allowsTapAndSelect;
 
 
 #pragma mark - Manage the undo and redo

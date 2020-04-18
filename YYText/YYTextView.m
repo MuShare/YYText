@@ -1929,6 +1929,7 @@ typedef NS_ENUM(NSUInteger, YYTextMoveDirection) {
     _highlightable = YES;
     _allowsCopyAttributedString = YES;
     _textAlignment = NSTextAlignmentNatural;
+    _allowsTapAndSelect = NO;
     
     _innerText = [NSMutableAttributedString new];
     _innerContainer = [YYTextContainer new];
@@ -2679,6 +2680,21 @@ typedef NS_ENUM(NSUInteger, YYTextMoveDirection) {
         }
         
         [self _endTouchTracking];
+
+        if (_allowsTapAndSelect && _selectedTextRange.asRange.length == 0 && _innerText.length > 0) {
+            YYTextRange *newRange = [self _getClosestTokenRangeAtPosition:_selectedTextRange.start];
+            if (newRange.asRange.length > 0) {
+                [_inputDelegate selectionWillChange:self];
+                _selectedTextRange = newRange;
+                [_inputDelegate selectionDidChange:self];
+            }
+            _state.selectedWithoutEdit = YES;
+            [self _updateSelectionView];
+
+            if ([_outerDelegate respondsToSelector:@selector(textView:didTapAndSelectTextInRange:)]) {
+                [_outerDelegate textView:self didTapAndSelectTextInRange:_selectedTextRange.asRange];
+            }
+        }
     }
     
     if (!_state.swallowTouch) [super touchesEnded:touches withEvent:event];
