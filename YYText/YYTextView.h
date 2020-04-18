@@ -23,6 +23,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol YYTextViewDataSource <NSObject>
+@optional
+- (id<UITextInputTokenizer>)customizeTokenizer;
+@end
+
 /**
  The YYTextViewDelegate protocol defines a set of optional methods you can use
  to receive editing-related messages for YYTextView objects. 
@@ -68,6 +73,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @interface YYTextView : UIScrollView <UITextInput>
 
+#pragma mark - Accessing the DataSource
+///=============================================================================
+/// @name Accessing the Delegate
+///=============================================================================
+@property (nullable, nonatomic, weak) id<YYTextViewDataSource> dataSource;
 
 #pragma mark - Accessing the Delegate
 ///=============================================================================

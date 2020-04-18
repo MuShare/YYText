@@ -1912,8 +1912,18 @@ typedef NS_ENUM(NSUInteger, YYTextMoveDirection) {
     _selectedTextRange = [YYTextRange defaultRange];
     _markedTextRange = nil;
     _markedTextStyle = nil;
-    _tokenizer = [[UITextInputStringTokenizer alloc] initWithTextInput:self];
-    
+
+    if ([_dataSource respondsToSelector:@selector(customizeTokenizer)]) {
+        id tokenizer = [_dataSource customizeTokenizer];
+        if (tokenizer) {
+            _tokenizer = tokenizer;
+        }
+    }
+
+    if (!_tokenizer) {
+        _tokenizer = [[UITextInputStringTokenizer alloc] initWithTextInput:self];
+    }
+
     _editable = YES;
     _selectable = YES;
     _highlightable = YES;
