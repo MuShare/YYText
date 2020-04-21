@@ -23,11 +23,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol YYTextViewDataSource <NSObject>
-@optional
-- (id<UITextInputTokenizer>)customizeTokenizer;
-@end
-
 /**
  The YYTextViewDelegate protocol defines a set of optional methods you can use
  to receive editing-related messages for YYTextView objects. 
@@ -51,6 +46,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)textView:(YYTextView *)textView shouldLongPressHighlight:(YYTextHighlight *)highlight inRange:(NSRange)characterRange;
 - (void)textView:(YYTextView *)textView didLongPressHighlight:(YYTextHighlight *)highlight inRange:(NSRange)characterRange rect:(CGRect)rect;
 - (void)textView:(YYTextView *)textView didTapAndSelectTextInRange:(NSRange)range;
+- (void)textViewDidLoseSelection:(YYTextView *)textView;
 @end
 
 
@@ -73,12 +69,6 @@ NS_ASSUME_NONNULL_BEGIN
  See YYTextAttribute.h and YYTextLayout.h for more information.
  */
 @interface YYTextView : UIScrollView <UITextInput>
-
-#pragma mark - Accessing the DataSource
-///=============================================================================
-/// @name Accessing the Delegate
-///=============================================================================
-@property (nullable, nonatomic, weak) id<YYTextViewDataSource> dataSource;
 
 #pragma mark - Accessing the Delegate
 ///=============================================================================

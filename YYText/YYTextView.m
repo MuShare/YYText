@@ -328,6 +328,12 @@ typedef NS_ENUM(NSUInteger, YYTextMoveDirection) {
     [allRects enumerateObjectsUsingBlock:^(YYTextSelectionRect *rect, NSUInteger idx, BOOL *stop) {
         rect.rect = [self _convertRectFromLayout:rect.rect];
     }];
+
+    NSInteger count = [allRects count];
+    if (count <= 0 && [_outerDelegate respondsToSelector:@selector(textViewDidLoseSelection:)]) {
+        [_outerDelegate textViewDidLoseSelection:self];
+    }
+
     _selectionView.selectionRects = allRects;
     if (!_state.firstShowDot && containsDot) {
         _state.firstShowDot = YES;
@@ -1912,13 +1918,6 @@ typedef NS_ENUM(NSUInteger, YYTextMoveDirection) {
     _selectedTextRange = [YYTextRange defaultRange];
     _markedTextRange = nil;
     _markedTextStyle = nil;
-
-    if ([_dataSource respondsToSelector:@selector(customizeTokenizer)]) {
-        id tokenizer = [_dataSource customizeTokenizer];
-        if (tokenizer) {
-            _tokenizer = tokenizer;
-        }
-    }
 
     if (!_tokenizer) {
         _tokenizer = [[UITextInputStringTokenizer alloc] initWithTextInput:self];
