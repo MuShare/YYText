@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = 'MuShareYYText'
   s.summary      = 'Powerful text framework for iOS to display and edit rich text.'
-  s.version      = '1.2.1'
+  s.version      = '1.2.2'
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.authors      = { 'ibireme' => 'ibireme@gmail.com', 'yy' => 'yanyin1986@gmail.com' }
   s.social_media_url = 'http://blog.ibireme.com'
