@@ -1071,10 +1071,10 @@ typedef NS_ENUM(NSUInteger, YYTextMoveDirection) {
     position = [self _correctedTextPosition:position];
     if (!position) return nil;
     YYTextRange *range = nil;
-    if (_tokenizer) {
-        range = (id)[_tokenizer rangeEnclosingPosition:position withGranularity:UITextGranularityWord inDirection:UITextStorageDirectionForward];
+    if (self.tokenizer) {
+        range = (id)[self.tokenizer rangeEnclosingPosition:position withGranularity:UITextGranularityWord inDirection:UITextStorageDirectionForward];
         if (range.asRange.length == 0) {
-            range = (id)[_tokenizer rangeEnclosingPosition:position withGranularity:UITextGranularityWord inDirection:UITextStorageDirectionBackward];
+            range = (id)[self.tokenizer rangeEnclosingPosition:position withGranularity:UITextGranularityWord inDirection:UITextStorageDirectionBackward];
         }
     }
     
@@ -1108,9 +1108,9 @@ typedef NS_ENUM(NSUInteger, YYTextMoveDirection) {
     YYTextRange *touchRange = [_innerLayout closestTextRangeAtPoint:point];
     touchRange = [self _correctedTextRange:touchRange];
     
-    if (_tokenizer && touchRange) {
-        YYTextRange *encEnd = (id)[_tokenizer rangeEnclosingPosition:touchRange.end withGranularity:UITextGranularityWord inDirection:UITextStorageDirectionBackward];
-        YYTextRange *encStart = (id)[_tokenizer rangeEnclosingPosition:touchRange.start withGranularity:UITextGranularityWord inDirection:UITextStorageDirectionForward];
+    if (self.tokenizer && touchRange) {
+        YYTextRange *encEnd = (id)[self.tokenizer rangeEnclosingPosition:touchRange.end withGranularity:UITextGranularityWord inDirection:UITextStorageDirectionBackward];
+        YYTextRange *encStart = (id)[self.tokenizer rangeEnclosingPosition:touchRange.start withGranularity:UITextGranularityWord inDirection:UITextStorageDirectionForward];
         if (encEnd && encStart) {
             NSArray *arr = [@[encEnd.start, encEnd.end, encStart.start, encStart.end] sortedArrayUsingSelector:@selector(compare:)];
             touchRange = [YYTextRange rangeWithStart:arr.firstObject end:arr.lastObject];
