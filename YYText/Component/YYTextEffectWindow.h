@@ -49,4 +49,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+UIKIT_EXTERN NSString *const YYTextViewWindowBecomeKeyWindowNotification;
+
 NS_ASSUME_NONNULL_END

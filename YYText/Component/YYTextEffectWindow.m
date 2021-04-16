@@ -13,7 +13,9 @@
 #import "YYTextKeyboardManager.h"
 #import "YYTextUtilities.h"
 #import "UIView+YYText.h"
+#import "YYTextView.h"
 
+NSString *const YYTextViewWindowBecomeKeyWindowNotification = @"YYTextViewWindowBecomeKeyWindowNotification";
 
 @implementation YYTextEffectWindow
 
@@ -49,7 +51,16 @@
 
 // stop self from becoming the KeyWindow
 - (void)becomeKeyWindow {
-    [[YYTextSharedApplication().delegate window] makeKeyWindow];
+    id<UIApplicationDelegate> delegate = YYTextSharedApplication().delegate;
+    if (delegate == nil) {
+        return;
+    }
+
+    if ([delegate respondsToSelector:@selector(window)]) {
+        [[delegate window] makeKeyWindow];
+    } else {
+        [[NSNotificationCenter defaultCenter] postNotificationName:YYTextViewWindowBecomeKeyWindowNotification object:nil];
+    }
 }
 
 - (UIViewController *)rootViewController {
